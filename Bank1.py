@@ -6,21 +6,33 @@ if pin != userpin:
     exit()
 
 
+
+try: 
+    with open("balance.txt", "r")as balanceFile:
+        try:
+            balance = balanceFile.readline()
+            balance = float(balance)
+        except (ValueError):
+                print("file corrupt")
+                balance = 0.0
+except (FileNotFoundError):
+    balance = 0.0
 menu = 0
-# menu 1 Insättning
-# menu 2 Uttag
-# menu 3 avsluta
+
 print("1 Insättning, 2 Uttag, 3 Avsluta")
-saldo = 1000
+
+
+
 while menu != 3:
-    print("Ditt saldo är: ", saldo)
+    print("Ditt saldo är: ", balance)
     menu = int(input("Skriv ditt val[1, 2, 3]: "))
     if menu == 1:
-        saldo = saldo + float(input("gör en insättning: "))
+        balance = balance + float(input("gör en insättning: "))
     elif menu == 2:
-        saldo = saldo - float(input("gör ett uttag: "))
+        balance = balance - float(input("gör ett uttag: "))
     else:
         print("Avslut") 
+
 
 
 
