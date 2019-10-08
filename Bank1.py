@@ -3,7 +3,7 @@ pin = 1111
 userpin = int(input("skriv in din pinkod: ")) #nu lägger man ett vrde till userpin och med int funktionen så kan man bara skriva med siffror annars blir det fel.
 
 if pin != userpin: #om inte pin koden stämmer med värdet pin så stängs pogrammet av.
-exit()
+    exit()
 
 
 
@@ -30,8 +30,8 @@ while menu != 3: #nu loopas pogrammet på 3, sedan så printar pogrammet ut ens 
         balance = balance + float(input("gör en insättning: "))
     elif menu == 2: # om man valde 2 så kommer man till uttags menyn där pogrammet tar balance och sen subtraherar det med värde man skriver som även går igenom float så att man bara kan skriva med siffror med decimaler.
         balance = balance - float(input("gör ett uttag: "))
-    else:
-        print("Avslut") 
+    else: #om 
+        exit() print("Avslut") 
 
 
 
